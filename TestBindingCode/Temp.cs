@@ -9,5 +9,11 @@ namespace TestBindingCode
     {
         [ObservableProperty]
         private int num;
+
+        [ObservableProperty]
+        private double floatWithFormatting;
+
+        [ObservableProperty]
+        private double floatWithConverter;
     }
 }

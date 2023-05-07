@@ -17,6 +17,8 @@ namespace TestBindingCode
             rng = new Random();
             foo = new Temp();
             foo.Num = rng.Next(0, 100);
+            foo.FloatWithConverter = rng.NextDouble() * 100d;
+            foo.FloatWithFormatting = rng.NextDouble() * 100d;
             this.DataContext = foo;
         }
 
@@ -24,6 +26,8 @@ namespace TestBindingCode
         {
             foo.Num = rng.Next(0, 100);
             MessageBox.Show("Num is " + foo.Num);
+            foo.FloatWithConverter = rng.NextDouble() * 100d;
+            foo.FloatWithFormatting = rng.NextDouble() * 100d;
         }
     }
 }

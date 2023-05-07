@@ -14,7 +14,9 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -26,8 +28,21 @@
             Grid.Row="0"
             Grid.Column="1"
             Text="{Binding Path=Num}" />
-        <Button
+
+        <Label Grid.Row="1" Grid.Column="0">Float with formatting</Label>
+        <TextBox
             Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding Path=FloatWithFormatting, StringFormat={}{0:n2}}" />
+
+        <Label Grid.Row="2" Grid.Column="0">Float with converter</Label>
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding Path=FloatWithConverter, Converter={x:Static local:Converters.FloatToString}}" />
+
+        <Button
+            Grid.Row="3"
             Grid.Column="0"
             Click="buttonClick">
             Randomise
